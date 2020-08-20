@@ -65,16 +65,16 @@
   <ItemGroup>
     <Compile Include="Assets\Old\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="Unity.ProBuilder">
-      <HintPath>A:/Programs/Unity/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>A:/Programs/Unity/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>A:/Programs/Unity/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>A:/Programs/Unity/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>A:/Programs/Unity/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

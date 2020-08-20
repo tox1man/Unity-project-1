@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletInit : MonoBehaviour
 {
@@ -14,10 +11,6 @@ public class BulletInit : MonoBehaviour
         InitializeBullets(_amountOfBullets);
         UpdateBulletsPosition();
     }
-    void Start()
-    {
-    }
-
     private void InitializeBullets(uint amount)
     {
         _bulletsTransformList = new GameObject[amount];
