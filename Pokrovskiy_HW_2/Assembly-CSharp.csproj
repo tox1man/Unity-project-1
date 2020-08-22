@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemyNavigation.cs" />
     <Compile Include="Assets\HW2\Scripts\BulletHitDetector.cs" />
     <Compile Include="Assets\HW2\Scripts\BulletInit.cs" />
     <Compile Include="Assets\HW2\Scripts\CameraManager.cs" />

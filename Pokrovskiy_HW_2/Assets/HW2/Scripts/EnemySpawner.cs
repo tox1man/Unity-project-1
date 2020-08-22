@@ -10,29 +10,20 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject _boss;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         //спавним мобов
-        foreach (GameObject e in GameObject.FindGameObjectsWithTag("Enemy"))
+        foreach (GameObject enemySpawnPoint in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
         {
-            Transform enemyTransform = e.transform;
-            var enemyTemp = Instantiate(_enemy, enemyTransform.position, enemyTransform.rotation, enemyTransform);
-            enemyTemp.transform.localScale = enemyTransform.localScale;
+            var enemyTemp = Instantiate(_enemy, enemySpawnPoint.transform.position, enemySpawnPoint.transform.rotation, enemySpawnPoint.transform);
+            enemyTemp.transform.localScale = enemySpawnPoint.transform.localScale;
         }  
         
         //спавним боссов
-        foreach (GameObject e in GameObject.FindGameObjectsWithTag("Boss"))
+        foreach (GameObject bossSpawnPoint in GameObject.FindGameObjectsWithTag("BossSpawnPoint"))
         {
-            Transform enemyTransform = e.transform;
-            var enemyTemp = Instantiate(_boss, enemyTransform.position, enemyTransform.rotation, enemyTransform);
-            enemyTemp.transform.localScale = new Vector3(enemyTransform.localScale.x * 2f, enemyTransform.localScale.y * 2f, enemyTransform.localScale.z * 2f);
+            var bossTemp = Instantiate(_boss, bossSpawnPoint.transform.position, bossSpawnPoint.transform.rotation, bossSpawnPoint.transform);
+            bossTemp.transform.localScale = new Vector3(bossSpawnPoint.transform.localScale.x * 2f, bossSpawnPoint.transform.localScale.y * 2f, bossSpawnPoint.transform.localScale.z * 2f);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
