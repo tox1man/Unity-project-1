@@ -47,7 +47,8 @@ public class PlayerControls : MonoBehaviour
     
     void Shoot()
     {
-        //bool isShot = false;
+        _bullets = BulletInit.GetBulletsList();
+
         foreach (GameObject bullet in _bullets)
         {
             //Debug.Log(bullet);

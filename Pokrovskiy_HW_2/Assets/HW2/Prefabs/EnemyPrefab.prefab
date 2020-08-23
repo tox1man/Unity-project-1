@@ -149,4 +149,4 @@ MonoBehaviour:
   _enemyNavigationAgent: {fileID: 6213622154165052036}
   _mainCamera: {fileID: 7894929085843772623, guid: 979c16b66270a404b86b023f6b0a542f,
     type: 3}
-  _drawPaths: 1
+  _drawPaths: 0
