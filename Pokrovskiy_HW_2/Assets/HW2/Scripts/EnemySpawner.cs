@@ -9,13 +9,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject _enemy;
     [SerializeField] private GameObject _boss;
 
+    private Vector3 _enemySpawnOffset = new Vector3 (0.0f, -1.0f, 0.0f);
+
 
     void Start()
     {
         //спавним мобов
         foreach (GameObject enemySpawnPoint in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
         {
-            var enemyTemp = Instantiate(_enemy, enemySpawnPoint.transform.position, enemySpawnPoint.transform.rotation, enemySpawnPoint.transform);
+            var enemyTemp = Instantiate(_enemy, enemySpawnPoint.transform.position + _enemySpawnOffset, enemySpawnPoint.transform.rotation, enemySpawnPoint.transform);
             enemyTemp.transform.localScale = enemySpawnPoint.transform.localScale;
         }  
         

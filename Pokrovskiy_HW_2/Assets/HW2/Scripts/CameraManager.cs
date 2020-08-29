@@ -5,11 +5,12 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     private Transform _mainCameraTransform;
-    public GameObject _playerGO;
+    private GameObject _playerGO;
     private Vector3 _mainCameraPos;
     // Start is called before the first frame update
     void Awake()
     {
+        _playerGO = GameObject.FindGameObjectWithTag("Player");
         _mainCameraTransform = gameObject.GetComponent<Transform>();
         _mainCameraPos = _mainCameraTransform.position;
     }

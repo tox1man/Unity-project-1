@@ -63,19 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HW2\Scripts\BulletHitDetector.cs" />
     <Compile Include="Assets\HW2\Scripts\BulletInit.cs" />
     <Compile Include="Assets\HW2\Scripts\CameraManager.cs" />
     <Compile Include="Assets\HW2\Scripts\EnemyNavigation.cs" />
+    <Compile Include="Assets\HW2\Scripts\EnemyPOV.cs" />
     <Compile Include="Assets\HW2\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\BulletHitDetector (old).cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\HitDetector.cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\PlayerHitDetector (old).cs" />
     <Compile Include="Assets\HW2\Scripts\OneUpPickUp.cs" />
     <Compile Include="Assets\HW2\Scripts\PlayerControls.cs" />
-    <Compile Include="Assets\HW2\Scripts\PlayerHitDetector.cs" />
+    <Compile Include="Assets\HW2\Scripts\RocketLauncher.cs" />
     <Compile Include="Assets\HW2\Scripts\SecretDoorOpener.cs" />
     <Compile Include="Assets\HW2\Scripts\WeaponAnimation.cs" />
     <Compile Include="Assets\Old\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\Old\Scripts\Outliner.cs" />
     <Compile Include="Assets\Old\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\RocketHitDetector.cs" />
     <None Include="Assets\Old\Shaders\ToonShader.shader" />
     <None Include="Assets\Old\Shaders\SpookyStandardShader.shader" />
     <None Include="Assets\Old\Shaders\PlaneFog.shader" />
