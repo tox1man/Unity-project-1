@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2741926777264288897}
   - component: {fileID: 2741926777264288896}
   m_Layer: 0
-  m_Name: OneUp
+  m_Name: OneUpPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,8 +1105,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 6492266767022205840, guid: ee29e880a370493489d372d4da7411e9, type: 3}
-  _weapon: {fileID: 4137841478025387367, guid: d9c8cfdb05413e1409b010ee42e75324, type: 3}
-  _bullet: {fileID: 8504662806206854094, guid: d9e81ce0c971e504f8776443de46d44e, type: 3}
+  _bulletPrefab: {fileID: 8504662806206854094, guid: d9e81ce0c971e504f8776443de46d44e,
+    type: 3}
+  _weaponPrefab: {fileID: 4388530150122876754, guid: 9246b95224aca1d4495b1652cfda7154,
+    type: 3}
 --- !u!95 &2741926777264288896
 Animator:
   serializedVersion: 3

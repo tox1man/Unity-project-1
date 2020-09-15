@@ -63,23 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HW2\Scripts\BulletInit.cs" />
-    <Compile Include="Assets\HW2\Scripts\CameraManager.cs" />
-    <Compile Include="Assets\HW2\Scripts\EnemyNavigation.cs" />
-    <Compile Include="Assets\HW2\Scripts\EnemyPOV.cs" />
-    <Compile Include="Assets\HW2\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\BulletHitDetector (old).cs" />
-    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\HitDetector.cs" />
-    <Compile Include="Assets\HW2\Scripts\Hit_Detectors\PlayerHitDetector (old).cs" />
-    <Compile Include="Assets\HW2\Scripts\OneUpPickUp.cs" />
-    <Compile Include="Assets\HW2\Scripts\PlayerControls.cs" />
-    <Compile Include="Assets\HW2\Scripts\RocketLauncher.cs" />
-    <Compile Include="Assets\HW2\Scripts\SecretDoorOpener.cs" />
-    <Compile Include="Assets\HW2\Scripts\WeaponAnimation.cs" />
+    <Compile Include="Assets\HW2\Scripts\Animation_Scripts\ButtonAnimator.cs" />
+    <Compile Include="Assets\HW2\Scripts\Enemy_Scripts\EnemyKillManager.cs" />
+    <Compile Include="Assets\HW2\Scripts\Enemy_Scripts\EnemyNavigation.cs" />
+    <Compile Include="Assets\HW2\Scripts\Enemy_Scripts\EnemyPOV.cs" />
+    <Compile Include="Assets\HW2\Scripts\Enemy_Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\HW2\Scripts\Enemy_Scripts\RocketLauncher.cs" />
+    <Compile Include="Assets\HW2\Scripts\Game_Managers\CameraManager.cs" />
+    <Compile Include="Assets\HW2\Scripts\Game_Managers\GameManager.cs" />
+    <Compile Include="Assets\HW2\Scripts\Game_Managers\SceneLoader.cs" />
+    <Compile Include="Assets\HW2\Scripts\Game_Managers\UIControls.cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors_Scripts\BulletHitDetector (old).cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors_Scripts\HitDetector.cs" />
+    <Compile Include="Assets\HW2\Scripts\Hit_Detectors_Scripts\PlayerHitDetector (old).cs" />
+    <Compile Include="Assets\HW2\Scripts\Player_Scripts\BulletInit.cs" />
+    <Compile Include="Assets\HW2\Scripts\Player_Scripts\PlayerControls.cs" />
+    <Compile Include="Assets\HW2\Scripts\Player_Scripts\PlayerWeapon.cs" />
+    <Compile Include="Assets\HW2\Scripts\Scene_Objects_Scripts\OneUpPickUp.cs" />
+    <Compile Include="Assets\HW2\Scripts\Scene_Objects_Scripts\SecretDoorOpener.cs" />
     <Compile Include="Assets\Old\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\Old\Scripts\Outliner.cs" />
     <Compile Include="Assets\Old\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\RocketHitDetector.cs" />
     <None Include="Assets\Old\Shaders\ToonShader.shader" />
     <None Include="Assets\Old\Shaders\SpookyStandardShader.shader" />
     <None Include="Assets\Old\Shaders\PlaneFog.shader" />
@@ -92,8 +96,14 @@
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/toxim/Desktop/unity git/Unity-project-1/Pokrovskiy_HW_2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>A:/Programs/Unity/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

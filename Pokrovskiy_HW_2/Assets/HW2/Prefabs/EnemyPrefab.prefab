@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 6213622154165052036}
   - component: {fileID: 1993895556947590732}
   - component: {fileID: 6307181521607236047}
-  - component: {fileID: -8984773298077015482}
+  - component: {fileID: 5289484690523609354}
+  - component: {fileID: 3355308458228613703}
   m_Layer: 8
   m_Name: EnemyPrefab
   m_TagString: Enemy
@@ -175,7 +176,7 @@ MonoBehaviour:
   _yOffset: {x: 0, y: 0.5, z: 0}
   _colliderPosition: {x: 0, y: 0, z: 0}
   _colliderHalfDimentions: {x: 0, y: 0, z: 0}
---- !u!114 &-8984773298077015482
+--- !u!114 &5289484690523609354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,6 +185,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6526687373423650913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3fdd4d655e649347b2f65e80dc86428, type: 3}
+  m_Script: {fileID: 11500000, guid: d1a709f10dc6c1b43b06b88a7427b714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3355308458228613703
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526687373423650913}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bd175ac0f51de14781613598a8bb04f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -13,6 +13,9 @@ TagManager:
   - Level
   - Rocket
   - OneUp
+  - MenuCamera
+  - Weapon
+  - BulletContainer
   layers:
   - Default
   - TransparentFX
