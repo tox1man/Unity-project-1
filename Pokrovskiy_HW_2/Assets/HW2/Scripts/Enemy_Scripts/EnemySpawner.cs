@@ -9,10 +9,6 @@ public class EnemySpawner : MonoBehaviour
 
     private static Vector3 _enemySpawnOffset = new Vector3 (0.0f, -0.6f, 0.0f);
 
-    private void Awake()
-    {
-        GameObject.DontDestroyOnLoad(_enemy);
-    }
     public static void SpawnEnemies(GameObject enemyPrefab)
     {
         foreach (GameObject enemySpawnPoint in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
@@ -39,7 +35,5 @@ public class EnemySpawner : MonoBehaviour
     {
         var bossTemp = Instantiate(bossPrefab, bossSpawnPoint.transform.position, bossSpawnPoint.transform.rotation, bossSpawnPoint.transform);
         bossTemp.transform.localScale = bossSpawnPoint.transform.localScale * 2;
-        
-        //bossTemp.transform.localScale = new Vector3(bossSpawnPoint.transform.localScale.x * 2f, bossSpawnPoint.transform.localScale.y * 2f, bossSpawnPoint.transform.localScale.z * 2f);
     }
 }

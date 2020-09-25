@@ -1,23 +1,38 @@
-﻿//using Boo.Lang;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 
 public class EnemyNavigation : MonoBehaviour
 {
+
+    #region Fields
+
     [SerializeField] private NavMeshAgent _enemyNavigationAgent;
     [SerializeField] private bool _drawPaths = false;
-    private Camera _mainCamera;
-
-    private int wayPointIndex = 0;
-    private List<GameObject> _wayPointsList;
+    private static Transform _playerTransform;
     private NavMeshAgent _enemyNavAgent;
+    private Camera _mainCamera;
+    private List<GameObject> _wayPointsList;
+
+    private bool _isPatroling = true;
+    private int wayPointIndex = 0;
     private Color pathColor;
+
+    public bool PatrolingMode
+    {
+        get { return _isPatroling;  }
+        set { _isPatroling = value; }
+    }
+
+    #endregion
+
+    #region Unity Methods
 
     private void Awake()
     {
         _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Start()
@@ -30,11 +45,15 @@ public class EnemyNavigation : MonoBehaviour
     {
         if (_drawPaths) DrawPaths(pathColor);
 
-        if (_enemyNavAgent.remainingDistance < 0.5f)
+        if (_enemyNavAgent.remainingDistance < 0.5f && PatrolingMode)
         {
             GoToNextPoint();
         }
     }
+
+    #endregion
+
+    #region Methods
 
     private List<GameObject> GetEnemyWayPoints()
     {
@@ -49,12 +68,13 @@ public class EnemyNavigation : MonoBehaviour
                 _enemyWayPoints.Add(wayPoint);
             }
         }
-        //Debug.Log(_enemyWayPoints.Count);
         return _enemyWayPoints;
     }
 
     private void SetEnemyPatrol()
     {
+        _isPatroling = true;
+
         _wayPointsList = GetEnemyWayPoints();
         _enemyNavAgent = gameObject.GetComponent<NavMeshAgent>();
 
@@ -81,7 +101,12 @@ public class EnemyNavigation : MonoBehaviour
 
         _enemyNavAgent.SetDestination(_wayPointsList[wayPointIndex].transform.position);
         wayPointIndex = (wayPointIndex + 1) % _wayPointsList.Count;
-        //Debug.Log(wayPointIndex);
+    }
+
+
+    public static void EnemyFollowPlayer(GameObject enemy)
+    {
+        enemy.GetComponent<NavMeshAgent>().SetDestination(_playerTransform.position);
     }
 
     private Vector3 getPositionFromMouseButton()
@@ -94,7 +119,6 @@ public class EnemyNavigation : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.DrawLine(ray.origin, hit.point);
-                //Debug.Log(ray.origin);
                 return hit.point;
             }
         }
@@ -104,4 +128,6 @@ public class EnemyNavigation : MonoBehaviour
         }
         return Vector3.zero;
     }
+
+    #endregion
 }

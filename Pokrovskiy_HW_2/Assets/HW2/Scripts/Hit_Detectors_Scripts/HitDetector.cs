@@ -4,11 +4,11 @@ public class HitDetector : MonoBehaviour
 {
     #region Fields
 
+    private GameObject _weapon;
+
+    public static bool _playerHit = false;
     private bool _playerHitDetector = false;
     private bool _bulletHitDetector = false;
-    private static bool _playerHit = false;
-
-    //EnemyKillManager killManager;
 
     #endregion
 
@@ -16,12 +16,14 @@ public class HitDetector : MonoBehaviour
 
     private void Start()
     {
+        _weapon = GameObject.FindGameObjectWithTag("Weapon");
+
         _playerHitDetector = gameObject.CompareTag("Player");
         _bulletHitDetector = gameObject.CompareTag("Bullet");
     }
     private void OnTriggerEnter(Collider coll)
     {
-        if (_playerHitDetector) CheckPlayerHit(coll, _playerHit, gameObject);
+        if (_playerHitDetector) CheckPlayerHit(coll, _playerHit, gameObject, _weapon);
         else if (_bulletHitDetector) CheckBulletHit(coll, gameObject);
     }
 
@@ -46,14 +48,14 @@ public class HitDetector : MonoBehaviour
 
     #region PlayerMethods
 
-    public static void CheckPlayerHit(Collider coll, bool playerHit, GameObject player)
+    public static void CheckPlayerHit(Collider coll, bool playerHit, GameObject player, GameObject weapon)
     {
 
         if (coll.gameObject.CompareTag("Enemy"))
         {
             if (playerHit)
             {
-                HitDetector.KillPlayer(player);
+                HitDetector.KillPlayer(player, weapon);
             }
             else
             {
@@ -62,15 +64,16 @@ public class HitDetector : MonoBehaviour
         }
         else if (coll.gameObject.CompareTag("Rocket"))
         {
-            HitDetector.KillPlayer(player);
+            HitDetector.KillPlayer(player,weapon);
             Destroy(coll.gameObject);
         }
     }
-    private static void KillPlayer(GameObject player)
+    private static void KillPlayer(GameObject player, GameObject weapon)
     {
         player.SetActive(false);
+        weapon.SetActive(false);
 
-        Debug.Log("You died!");
+        GameManager.LoseGame();
     }
 
     #endregion

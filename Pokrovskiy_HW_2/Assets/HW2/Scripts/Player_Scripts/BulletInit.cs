@@ -3,6 +3,8 @@
 
 public class BulletInit : MonoBehaviour
 {
+    #region Fields
+
     [SerializeField] public GameObject _bulletPrefab;
     [SerializeField] private Material _tempBulletMaterial;
     [SerializeField] public GameObject _weapon;
@@ -19,13 +21,21 @@ public class BulletInit : MonoBehaviour
 
         get { return UPGRADE_AMOUNT_OF_BULLETS;  }
     }
+
+    #endregion
+
+    #region Unity Methods
+
     private void Start()
     {
-        //_weapon = GameObject.FindGameObjectWithTag("Weapon");
-
         InitializeBullets(STARTING_AMOUNT_OF_BULLETS, _bulletPrefab, _weapon);
         UpdateBulletsPosition(STARTING_AMOUNT_OF_BULLETS, _weapon);
     }
+
+    #endregion
+
+    #region Methods
+
     /// <summary>
     /// Adds a set amount of bullets to player weapon
     /// </summary>
@@ -82,4 +92,6 @@ public class BulletInit : MonoBehaviour
     {
         bullet.GetComponent<Renderer>().material = material;
     }
+
+    #endregion
 }

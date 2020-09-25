@@ -3,6 +3,8 @@
 
 public class EnemyPOV : MonoBehaviour
 {
+    #region Fields
+
     [SerializeField] private LayerMask _mask;
     [SerializeField] private GameObject _rocketPrefab;
 
@@ -22,6 +24,10 @@ public class EnemyPOV : MonoBehaviour
     private Vector3 _rayStartPosition;
     private Vector3 _rayTargetPosition;
 
+    #endregion
+
+    #region Unity Methods
+
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +39,10 @@ public class EnemyPOV : MonoBehaviour
     {
         if (_turretMode) { TurretFindPlayer(); } else { EnemyFindPlayer(); }
     }
+
+    #endregion
+
+    #region Methods
 
     private void TurretFindPlayer()
     {
@@ -92,7 +102,7 @@ public class EnemyPOV : MonoBehaviour
     private void EnemyFindPlayer() 
     {
         _gizmoRayColor = Color.red;
-        _distance = 2.0f;
+        _distance = 3.0f;
 
         _rayStartPosition = gameObject.transform.position + _yOffset;
         _rayTargetPosition = gameObject.transform.forward;
@@ -102,6 +112,7 @@ public class EnemyPOV : MonoBehaviour
             if (_rayHit.collider.gameObject.CompareTag(_player.tag))
             {
                 _gizmoRayColor = Color.green;
+                EnemyNavigation.EnemyFollowPlayer(gameObject);
             }
         }
         if (_drawGizmoRay) DrawGizmoRay(_rayStartPosition, _rayTargetPosition * _distance, _gizmoRayColor);
@@ -116,4 +127,6 @@ public class EnemyPOV : MonoBehaviour
     {
         return Physics.Raycast(startPos, dir, out _rayHit, distance, mask);
     }
+
+    #endregion
 }

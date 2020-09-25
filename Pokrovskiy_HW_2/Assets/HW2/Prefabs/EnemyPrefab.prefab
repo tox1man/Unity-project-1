@@ -125,7 +125,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.38995802
-  m_Speed: 3.5
+  m_Speed: 2.8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -150,9 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyNavigationAgent: {fileID: 6213622154165052036}
-  _mainCamera: {fileID: 7894929085843772623, guid: 979c16b66270a404b86b023f6b0a542f,
-    type: 3}
-  _drawPaths: 0
+  _drawPaths: 1
 --- !u!114 &6307181521607236047
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,13 @@ public class SceneLoader : MonoBehaviour
         Scene scene = SceneManager.GetSceneByName(sceneName);
         SceneManager.SetActiveScene(scene);
     }
+
+    public static void ReloadScene(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+    
     public static Scene[] GetLoadedScenes()
     {
         Scene[] allScenes = new Scene[SceneManager.sceneCount];

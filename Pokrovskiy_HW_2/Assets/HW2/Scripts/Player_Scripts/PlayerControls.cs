@@ -3,13 +3,19 @@
 
 public class PlayerControls : MonoBehaviour
 {
+    #region Fields
+
     private Rigidbody _player;
     
     private float _playerRotateSpeedMultiplier = 1.2f;
     private float _playerSpeed = 200.0f;
 
     private Vector3 _moveDirection;
- 
+
+    #endregion
+
+    #region Unity Methods
+
     void Start()
     {
         _player = gameObject.GetComponent<Rigidbody>();
@@ -26,6 +32,10 @@ public class PlayerControls : MonoBehaviour
             Invoke(nameof(InvokeFinishReload), PlayerWeapon._reloadTime);
         }
     }
+
+    #endregion
+
+    #region Methods
 
     private void InvokeFinishReload()
     {
@@ -54,5 +64,7 @@ public class PlayerControls : MonoBehaviour
         _player.velocity = dir * _playerSpeed * Time.fixedDeltaTime;
         _player.angularVelocity *= _playerRotateSpeedMultiplier;
     }
+
+    #endregion
 }
 

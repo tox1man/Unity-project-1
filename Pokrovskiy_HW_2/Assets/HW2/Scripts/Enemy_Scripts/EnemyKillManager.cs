@@ -17,10 +17,11 @@ public class EnemyKillManager : MonoBehaviour
 
     public static void KillEnemy(GameObject enemy)
     {
-        //DeathAnimationStart();
         Destroy(enemy);
 
         UIControls._killCount++;
         UIControls.UpdateGUIKills();
+
+        WinCondition.CheckWinCondition();
     }
 }
