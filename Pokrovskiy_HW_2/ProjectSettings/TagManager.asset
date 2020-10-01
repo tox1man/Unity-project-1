@@ -16,6 +16,7 @@ TagManager:
   - MenuCamera
   - Weapon
   - BulletContainer
+  - Sounds
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,14 @@
 
 public class GameManager : MonoBehaviour
 {
+    #region Fields
+
+    [SerializeField] private AudioClip[] _soundtracks;
+
+    private AudioSource _soundTrackAudioSource;
+
+    #endregion
+
     #region Unity Methods
 
     private void Start()
@@ -23,6 +31,11 @@ public class GameManager : MonoBehaviour
         EnemySpawner.SpawnBosses(boss);
 
         UIControls.OpenMainMenu();
+
+        _soundTrackAudioSource = GameObject.Find("SoundTrack").GetComponent<AudioSource>();
+        _soundTrackAudioSource.clip = _soundtracks[Random.Range(0, _soundtracks.Length)];
+        SoundManager.PlaySound("SoundTrack");
+
     }
 
     public static void WinGame()
@@ -34,6 +47,7 @@ public class GameManager : MonoBehaviour
     public static void LoseGame()
     {
         UIControls.ShowEndGameMenu(false);
+        SoundManager.StopSound("SoundTrack");
         ResetGameProgress();
     }
 

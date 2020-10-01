@@ -93,5 +93,15 @@ public class BulletInit : MonoBehaviour
         bullet.GetComponent<Renderer>().material = material;
     }
 
+    public static void DestroyAllBullets()
+    {
+        GameObject bulletList = GameObject.FindGameObjectWithTag("BulletContainer");
+
+        for(int i = 0; i < bulletList.transform.childCount; i++)
+        {
+            Destroy(bulletList.transform.GetChild(i).gameObject);
+        }
+    }
+
     #endregion
 }

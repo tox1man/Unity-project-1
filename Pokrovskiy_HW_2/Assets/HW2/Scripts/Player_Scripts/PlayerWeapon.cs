@@ -10,6 +10,7 @@ public class PlayerWeapon : MonoBehaviour
     private static GameObject _weapon;
     private static GameObject _player;
     private static GameObject[] _bullets;
+    private static AudioSource _audioSource;
 
     private static float _shotPower = 20.0f;
     public static float _reloadTime = 1.0f;
@@ -27,6 +28,8 @@ public class PlayerWeapon : MonoBehaviour
         _bullets = BulletInit.GetBulletsList();
 
         _bulletsContainer = GameObject.FindGameObjectWithTag("BulletContainer");
+
+        _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     public static void WeaponFollowPlayer()
@@ -39,6 +42,7 @@ public class PlayerWeapon : MonoBehaviour
         if (_isReloading) return;
 
         _bullets = BulletInit.GetBulletsList();
+        BulletInit.DestroyAllBullets();
 
         foreach (GameObject bullet in _bullets)
         {
@@ -48,6 +52,8 @@ public class PlayerWeapon : MonoBehaviour
             tempBullet.GetComponent<Rigidbody>().isKinematic = false;
 
             tempBullet.GetComponent<Rigidbody>().AddForce(tempBullet.transform.up * _shotPower, ForceMode.Impulse);
+
+            SoundManager.PlaySound("ShootSound");
         }
     }
 
